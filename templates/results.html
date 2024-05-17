@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Search Results</title>
+</head>
+
+<body>
+    <div>
+        <h1>Search Results for "{{ query }}"</h1>
+        {% if results %}
+        <ul>
+            {% for image in results %}
+            <li>
+                <img src="{{ image.path }}" alt="Image result" style="max-width:200px;" />
+                <p>Tags: {{ image.tags|join(', ') }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No images found.</p>
+        {% endif %}
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+
+</html>

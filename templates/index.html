@@ -1,0 +1,43 @@
+<h1>Image Search Engine</h1>
+<form action="/add_image" method="post" enctype="multipart/form-data">
+    <label for="image">Upload Image:</label>
+    <input type="file" id="image" name="image" required><br>
+    <label for="tags">Tags (comma-separated):</label>
+    <input type="text" id="tags" name="tags" required><br>
+    <button type="submit">Add Image</button>
+</form>
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+<form action="/search" method="get">
+    <label for="query">Search Query:</label>
+    <input type="text" id="query" name="query" required><br>
+    <button type="submit">Search</button>
+</form>
+
+<!-- Add forms for updating tags, deleting an image, and removing a tag -->
+<form action="/update_tags" method="post">
+    <label for="image_path">Image Path:</label>
+    <input type="text" id="image_path" name="image_path" required><br>
+    <label for="new_tags">New Tags (comma-separated):</label>
+    <input type="text" id="new_tags" name="new_tags" required><br>
+    <button type="submit">Update Tags</button>
+</form>
+
+<form action="/delete_image" method="post">
+    <label for="image_path">Image Path:</label>
+    <input type="text" id="image_path" name="image_path" required><br>
+    <button type="submit">Delete Image</button>
+</form>
+
+<form action="/remove_tag" method="post">
+    <label for="image_path">Image Path:</label>
+    <input type="text" id="image_path" name="image_path" required><br>
+    <label for="tag">Tag:</label>
+    <input type="text" id="tag" name="tag" required><br>
+    <button type="submit">Remove Tag</button>
+</form>
+</div>
+</body>
+
+</html>
